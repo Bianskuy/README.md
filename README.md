@@ -1,92 +1,49 @@
-# Data Science & Artifical Intelligence with Python
+# Traffic-Signs-Detection-Tensorflow-YOLOv3-YOLOv4
+Tugas Akhir Penerapan Machine Learning pada Sistem Mekatronika.
 
-In this repo you can find useful examples of Data Science use cases and Artificial Intelligence problems.\
-Most of the projects are documented on [*Medium*](https://maurodp.medium.com/).
 
-<br>
+## Tentang ##
+Sistem pengenalan, deteksi (menemukan letak dan ukuran objek pada citra masukan), dan klasifikasi (mengklasifikasikan objek yang terdeteksi ke dalam subkelas). Kedua tugas tersebut biasanya dilakukan dengan model deteksi/klasifikasi tunggal seperti YOLO atau SSD, di mana gambar masukan diberi label dengan kotak pembatas dan kelas masing-masing. Namun, memberi label dan melatih kumpulan data tersebut memerlukan banyak waktu dan upaya. Oleh karena itu, tujuan utama proyek ini adalah untuk mendeteksi hanya satu kelas utama (rambu), dan mengintegrasikan Jaringan Neural Konvolusional yang dibuat khusus untuk mengklasifikasikan objek yang terdeteksi (subkelas seperti batas kecepatan, rambu berhenti, dll). Dengan cara ini, kita hanya perlu melatih model deteksi satu kali, untuk mendeteksi satu kelas utama, sementara beberapa model klasifikasi dapat dilatih untuk mengklasifikasikan objek yang terdeteksi sesuai kebutuhan tugas.
 
-### 1. Machine Learning:
-- <ins>**[Classification](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/machine_learning/example_classification.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/cv_colors.gif" width="550" height="250"></p>
-<br>
+![alt text](https://github.com/Alzaib/Traffic-Signs-Detection-Tensorflow-YOLOv3-YOLOv4/blob/main/images/flow.png)
 
-- <ins>**[Regression](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/machine_learning/example_regression.ipynb)**</ins>
-<br>	
-	<p align="center"><img src="_docs/regr_model.gif" width="450" height="250"></p>
-<br>
+## Output  ##
+### Detection in Real Time ###
 
-- <ins>**[Clustering](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/machine_learning/example_clustering.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/geo_cluster.gif" width="400" height="250"></p>
-<br>
+![gif](https://github.com/Alzaib/Traffic-Signs-Detection-Tensorflow-YOLOv3-YOLOv4/blob/main/images/demo.gif)
 
-- <ins>**[Recommendation Systems](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/machine_learning/example_recommendation.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/ml_recomm.PNG" width="600" height="200"></p>
-<br>
+### Detection on Saved Images ###
+![alt text](https://github.com/Alzaib/Traffic-Signs-Detection-Tensorflow-YOLOv3-YOLOv4/blob/main/images/output_images/1.jpg)
+![alt text](https://github.com/Alzaib/Traffic-Signs-Detection-Tensorflow-YOLOv3-YOLOv4/blob/main/images/output_images/2.jpg)
+![alt text](https://github.com/Alzaib/Traffic-Signs-Detection-Tensorflow-YOLOv3-YOLOv4/blob/main/images/output_images/6.jpg)
 
-- <ins>**[Route Optimization](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/machine_learning/example_route_optimization.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/ml_route.gif" width="550" height="300"></p>
-<br>
 
-------
+## Setup and Requirement ## 
+OpenCV (version 4)
 
-### 2. Time Series:
-- <ins>**[Forecasting](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/time_series/example_forecast.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/ts_model.PNG" width="400" height="150"></p>
-<br>
+Python 
 
-- <ins>**[Parametric Fit](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/time_series/example_parametric_fit.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/ts_param.PNG" width="400" height="150"></p>
-<br>
+Numpy
 
-- <ins>**[Multi Series](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/time_series/example_clustering.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/ts_clustering.PNG" width="400" height="150"></p>
-<br>
+TensorFlow 
 
-------
+Keras
 
-### 3. Natural Language Processing:
-- <ins>**[Text Classification](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/natural_language_processing/example_text_classification.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/nlp_analysis.gif" width="450" height="250"></p>
-<br>
+## YOLO Implementation ##
 
-- <ins>**[Text Summarization](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/natural_language_processing/example_text_summarization.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/nlp_summary.gif" width="450" height="200"></p>
-<br>
+Untuk proyek ini, karena keterbatasan waktu, saya memutuskan untuk menggunakan kumpulan data yang tersedia untuk umum (rambu lalu lintas Jerman) untuk melatih YOLO pada kumpulan data khusus saya yang dapat ditemukan di sini [1]. Rambu-rambu dalam dataset ini dibagi menjadi 4 kelas utama (larangan, bahaya, wajib dan lainnya). Karena memberi label ulang gambar menjadi 1 kelas adalah proses yang memakan waktu, jadi kami memutuskan untuk menggunakan kumpulan data dengan 4 kelas. YOLOv3 dan YOLOv4-Tiny khusus dilatih di Google Colab.
 
-- <ins>**[Knowledge Graph](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/natural_language_processing/example_knowledge_graph.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/nlp_graph.png" width="500" height="300"></p>
-<br>
+## Classification Model ##
 
-------
+Bagian ini melibatkan pembangunan jaringan saraf konvolusional khusus untuk mengklasifikasikan antara 43 kelas rambu lalu lintas. Kumpulan data yang digunakan untuk bagian ini dapat ditemukan di sini [2]. Metode tambahan untuk menyeimbangkan dan memperluas kumpulan data digunakan untuk prediksi keluaran yang lebih baik. Model ini juga dilatih di Google Colab.
 
-### 4. Computer Vision:
-- <ins>**[Image Classification](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/computer_vision/example_img_classification.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/cv_classif.png" width="600" height="250"></p>
-<br>
+## Weight ##
+Weight: https://drive.google.com/drive/folders/1cJl0CUJXfGHbd7LQWa1pcOIzKLrf2jdf?usp=sharing
 
-- <ins>**[Object Detection](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/computer_vision/example_obj_detection.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/cv_detection.gif" width="400" height="250"></p>
-<br>
+## References ## 
 
-- <ins>**[OCR Parsing](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/computer_vision/example_ocr_parsing.ipynb)**</ins>
-<br>
-	<p align="center"><img src="_docs/cv_ocr.png" width="500" height="450"></p>
-<br>
+[1] Dataset (YOLO Format): https://www.kaggle.com/valentynsichkar/traffic-signs-dataset-in-yolo-format
 
-------
+[2] Dataset (Classification): https://drive.google.com/drive/folders/15ZFDX9nNrkwMIas9FUO0V1AaiXquztCl?usp=sharing 
 
-### 5. Reinforcement Learning:
-- <ins>**[Artificial Intelligence Agent](https://github.com/mdipietro09/DataScience_ArtificialIntelligence_Utils/blob/master/reinforcement_learning/example_ai_agent.ipynb)**</ins>
-	* work in progress
+[3] YOLO GoogleColab Tutorial: https://www.youtube.com/watch?v=_FNfRtXEbr4&t=703s 
